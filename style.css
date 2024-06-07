@@ -1,0 +1,106 @@
+body {
+    color: #fff;
+    background-color: #0276ac;
+    margin: 0;
+    font-size: 16px;
+    font-family: arial;
+    overflow-x: hidden;
+}
+
+.intro {
+    background-color: #012c40;
+    padding: 30px;
+    text-align: center;
+}
+
+.intro h1 {
+    font-size: 46px;
+}
+
+.timeline ul {
+    padding: 50px 0;
+}
+
+.timeline ul li {
+    width: 6px;
+    list-style: none;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 50px;
+    background-color: #fff;
+}
+
+.timeline time {
+    display: block;
+    font-size: 22px;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.timeline ul li:after {
+    width: 30px;
+    height: 30px;
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    transition: all 0.5s;
+    background-color: inherit;
+    z-index: 1;
+}
+
+.timeline ul li div {
+    width: 400px;
+    position: relative;
+    bottom: 0;
+    padding: 15px;
+    background-color: #f45b69;
+    transition: all 0.5s;
+    opacity: 0;
+}
+
+.timeline ul li:nth-child(odd) div {
+    left: 45px;
+    transform: translateX(200px);
+}
+
+.timeline ul li:nth-child(even) div {
+    left: calc(-400px - 45px + -20px);
+    transform: translateX(-200px);
+}
+
+.timeline ul li.in-view:after {
+    background-color: #f45b69;
+}
+
+.timeline ul li.in-view div {
+    transform: none !important;
+    opacity: 1;
+}
+
+
+@media screen and (max-width:930px) {
+    .timeline ul li div {
+        width: 250px;
+    }
+
+    .timeline ul li:nth-child(even) div {
+        left: calc(-250px - 45px - 20px);
+    }
+}
+
+@media screen and (max-width:600px) {
+    .timeline ul li {
+        margin-left: 20px;
+    }
+
+    .timeline ul li div {
+        width: calc(100vw - 90px);
+    }
+
+    .timeline ul li:nth-child(even) div {
+        left: 45px;
+    }
+}
